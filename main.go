@@ -7,11 +7,16 @@ import (
 )
 
 func hello(c *fiber.Ctx) error {
-	return c.SendString("Hwllo!!")
+	return c.SendString("Hello!!")
+}
+
+func check(c *fiber.Ctx) error {
+	return c.SendString("Runing!!")
 }
 
 func creatRoutes(app *fiber.App) {
 	app.Get("/api", hello)
+	app.Get("/api/check", check)
 }
 
 func main() {
